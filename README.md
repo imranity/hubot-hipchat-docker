@@ -22,16 +22,16 @@ run.
 
 1. First create a file lets say `creds.list` that looks like following:  
 cat <<EOF > creds.list  
-HUBOT_HIPCHAT_TOKEN=<AUTH TOKEN OF BOT USERS HIPCHAT ACCOUNT>  
-HUBOT_HIPCHAT_JID=<JABBER ID OF BOT USER>  
-HUBOT_HIPCHAT_PASSWORD=<ACTUAL PASSWORD>  
-HUBOT_HIPCHAT_ROOMS=<ROOM URL TO CONNECT WHEN HUBOT STARTS>   
+HUBOT_HIPCHAT_TOKEN="AUTH TOKEN OF BOT USERS HIPCHAT ACCOUNT"  
+HUBOT_HIPCHAT_JID="JABBER ID OF BOT USER"  
+HUBOT_HIPCHAT_PASSWORD="ACTUAL PASSWORD"  
+HUBOT_HIPCHAT_ROOMS="ROOM URL TO CONNECT WHEN HUBOT STARTS"   
 EOF  
 The details of these credentials can be found here [official-hubot-hipchat-plugin](https://github.com/hipchat/hubot-hipchat). 
 
-2. After setting the credentials in creds.list, start the container:
+2. After setting the credentials in creds.list, start the container:  
+`docker run -d --env-file creds.list --name hubot-hipchat hubot-hipchat`
 
-`docker run -d --env-file creds.list --name hubot-hipchat hubot-hipchat`  
 3. Confirm services are running:   
 `docker logs hubot-hipchat`  
 `2017-02-04 05:28:51,010 INFO success: hubot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)`  
