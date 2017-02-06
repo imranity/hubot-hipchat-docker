@@ -6,8 +6,8 @@ Only requirement is to pass the hipchat credentials as environment variables dur
 
 The container starts with two services when run:
 	
-	redis-server
-	hubot (with hipchat as adapter)
+* redis-server
+* hubot (with hipchat as adapter)
 
 ## Building the image
 
